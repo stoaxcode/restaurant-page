@@ -132,12 +132,47 @@ ul > li > button {
   width: 88%;
 }
 
-.image-wrapper {
-  border: 1px solid white;
-  width: 20%;
+.image-holder {
+  border: 2px groove #cfbebe;
+  width: 400px;
   height: 450px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 47%;
-  left: 70%;
+  left: 69%;
+  border-radius: 16px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 10px 25px 30px rgba(46, 46, 56, 0.3);
+}
+
+.img {
+  animation: slide 16s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
+  80% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
 }

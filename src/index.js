@@ -1,4 +1,8 @@
 import "./styles.css";
+import chef1 from "./chef-1.png";
+import food1 from "./food-1.jpg";
+import food2 from "./food-2.jpg";
+import kitchen from "./kitchen.png";
 
 const divContent = document.querySelector("#content");
 
@@ -19,22 +23,24 @@ textWrapper.appendChild(h3);
 textWrapper.appendChild(divisionLine);
 textWrapper.appendChild(pElement);
 
-const img1 = document.createElement("div");
-img1.setAttribute("id", "image-1");
-const img2 = document.createElement("div");
-img2.setAttribute("id", "image-2");
-const img3 = document.createElement("div");
-img3.setAttribute("id", "image-3");
-
+const img1 = document.createElement("img");
+img1.classList.add("img");
+img1.src = chef1;
+const img2 = document.createElement("img");
+img2.classList.add("img");
+img2.src = food1;
+const img3 = document.createElement("img");
+img3.classList.add("img");
+img1.src = food2;
+const img4 = document.createElement("img");
+img4.classList.add("img");
+img4.src = kitchen;
 const imageHolder = document.createElement("div");
 imageHolder.classList.add("image-holder");
 imageHolder.appendChild(img1);
 imageHolder.appendChild(img2);
 imageHolder.appendChild(img3);
-
-const imageWrapper = document.createElement("div");
-imageWrapper.classList.add("image-wrapper");
-imageWrapper.appendChild(imageHolder);
+imageHolder.appendChild(img4);
 
 divContent.appendChild(textWrapper);
-divContent.appendChild(imageWrapper);
+divContent.appendChild(imageHolder);
