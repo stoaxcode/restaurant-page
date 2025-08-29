@@ -133,21 +133,24 @@ ul > li > button {
 }
 
 .image-holder {
-  border: 2px groove #cfbebe;
+  border: 1px groove #616161;
   width: 400px;
   height: 450px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 47%;
   left: 69%;
-  border-radius: 16px;
+  border-radius: 120px 16px / 16px 160px;
   display: flex;
   overflow: hidden;
-  box-shadow: 10px 25px 30px rgba(46, 46, 56, 0.3);
+  box-shadow: 10px 25px 30px rgba(151, 151, 151, 0.3);
 }
 
 .img {
   animation: slide 16s infinite;
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
 }
 
 @keyframes slide {
