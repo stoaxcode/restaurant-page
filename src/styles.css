@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "SourceSerif4";
+  src: url("./SourceSerif4_18pt-Regular.woff") format("woff");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Inter_18pt-Regular.woff") format("woff");
+}
+
 body {
   background-color: #d9d9d9;
 }
@@ -15,21 +26,67 @@ body {
   width: auto;
   height: 110px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 25px;
+  padding: 3em;
+  gap: 40em;
 }
 
 .logo-wrapper {
-  border: 1px solid black;
-  width: 180px;
-  height: 100px;
+  width: 230px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: 5px;
 }
 
 .logo-wrapper .logo {
   height: 80px;
+}
+
+.headerlogo-text {
+  font-family: "SourceSerif4";
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.nav {
+  width: 330px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.nav > ul {
+  display: flex;
+  width: 300px;
+  list-style: none;
+  gap: 50px;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul > li > button {
+  font-size: 1.5em;
+  border: none;
+}
+
+.content-wrapper {
+  height: 91.3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+}
+
+.content {
+  border: 1px solid red;
+  background-color: #223843;
+  width: 75%;
 }
