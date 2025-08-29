@@ -86,7 +86,58 @@ ul > li > button {
 }
 
 .content {
-  border: 1px solid red;
+  margin-top: 50px;
   background-color: #223843;
   width: 75%;
+  height: 90%;
+  position: relative;
+}
+
+.content::before {
+  content: url("./chef.png");
+  position: absolute;
+  top: 18%;
+  right: 66%;
+  height: 600px;
+  opacity: 40%;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 40%;
+  color: #f2f0ef;
+  padding: 10px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 48%;
+  right: 49%;
+}
+
+.h3 {
+  font-family: "SourceSerif4";
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.p {
+  font-family: "SourceSerif4";
+  font-size: 2em;
+  font-size: 500;
+}
+
+.division-line {
+  border-top: 2px solid white;
+  width: 88%;
+}
+
+.image-wrapper {
+  border: 1px solid white;
+  width: 20%;
+  height: 450px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 47%;
+  left: 70%;
 }
