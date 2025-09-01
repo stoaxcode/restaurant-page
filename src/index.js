@@ -1,4 +1,6 @@
 import "./styles.css";
-const home = require("./home.js");
+import HomePageUI from "./home.js";
 
-home();
+const homePage = new HomePageUI();
+
+homePage.displayHomeUI();

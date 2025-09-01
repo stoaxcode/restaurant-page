@@ -5,44 +5,74 @@ import kitchen from "./kitchen.png";
 
 const divContent = document.querySelector("#content");
 
-const h3 = document.createElement("h3");
-h3.textContent = "Hambal Restaurant";
-h3.classList.add("h3");
+export default class HomePageUI {
+  constructor(tag, attributes = {}, textContent = "") {
+    this.tag = tag;
+    this.attributes = attributes;
+    this.textContent = textContent;
+  }
 
-const divisionLine = document.createElement("div");
-divisionLine.classList.add("division-line");
+  createElement() {
+    const element = document.createElement(this.tag);
+    Object.entries(this.attributes).forEach(([key, value]) => {
+      element.setAttribute(key, value);
+    });
+    if (this.textContent) element.textContent = this.textContent;
+    return element;
+  }
 
-const pElement = document.createElement("p");
-pElement.textContent = "Deliciously bold flavors made with passion";
-pElement.classList.add("p");
+  createHomeUI() {
+    const h3 = new HomePageUI(
+      "h3",
+      { class: "h3" },
+      "Hambal Restaurant"
+    ).createElement();
 
-const textWrapper = document.createElement("div");
-textWrapper.classList.add("text-wrapper");
-textWrapper.appendChild(h3);
-textWrapper.appendChild(divisionLine);
-textWrapper.appendChild(pElement);
+    const divisionLine = new HomePageUI("div", {
+      class: "division-line",
+    }).createElement();
 
-const img1 = document.createElement("img");
-img1.classList.add("img");
-img1.src = chef1;
-const img2 = document.createElement("img");
-img2.classList.add("img");
-img2.src = food1;
-const img3 = document.createElement("img");
-img3.classList.add("img");
-img3.src = food2;
-const img4 = document.createElement("img");
-img4.classList.add("img");
-img4.src = kitchen;
-const imageHolder = document.createElement("div");
-imageHolder.classList.add("image-holder");
-imageHolder.appendChild(img1);
-imageHolder.appendChild(img2);
-imageHolder.appendChild(img3);
-imageHolder.appendChild(img4);
+    const pElement = new HomePageUI(
+      "p",
+      { class: "p" },
+      "Deliciouslu bold flavors made with passion"
+    ).createElement();
 
-divContent.appendChild(textWrapper);
-divContent.appendChild(imageHolder);
+    const textWrapper = new HomePageUI("div", {
+      class: "text-wrapper",
+    }).createElement();
 
-// TODO: Create a code for dry principle
-// Choose coding logic a simple function, class, or object constructor
+    textWrapper.append(h3, divisionLine, pElement);
+
+    const img1 = new HomePageUI("img", {
+      class: "img",
+      src: `${chef1}`,
+    }).createElement();
+    const img2 = new HomePageUI("img", {
+      class: "img",
+      src: `${food1}`,
+    }).createElement();
+    const img3 = new HomePageUI("img", {
+      class: "img",
+      src: `${food2}`,
+    }).createElement();
+    const img4 = new HomePageUI("img", {
+      class: "img",
+      src: `${kitchen}`,
+    }).createElement();
+
+    const imageHolder = new HomePageUI("div", {
+      class: "image-holder",
+    }).createElement();
+
+    imageHolder.append(img1, img2, img3, img4);
+
+    return [textWrapper, imageHolder];
+  }
+
+  displayHomeUI() {
+    divContent.innerHTML = "";
+    const elementTag = this.createHomeUI();
+    elementTag.forEach((el) => divContent.appendChild(el));
+  }
+}
