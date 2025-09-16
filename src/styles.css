@@ -146,6 +146,11 @@ ul > li > button {
   box-shadow: 10px 25px 30px rgba(151, 151, 151, 0.3);
 }
 
+.home-page {
+  height: 91.3vh;
+  display: flex;
+}
+
 .img {
   animation: slide 16s infinite;
   width: 100%;

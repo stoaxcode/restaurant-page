@@ -1,9 +1,8 @@
+import "./styles.css";
 import chef1 from "./chef-1.png";
 import food1 from "./food-1.jpg";
 import food2 from "./food-2.jpg";
 import kitchen from "./kitchen.png";
-
-const divContent = document.querySelector("#content");
 
 export default class HomePageUI {
   constructor(tag, attributes = {}, textContent = "") {
@@ -35,13 +34,12 @@ export default class HomePageUI {
     const pElement = new HomePageUI(
       "p",
       { class: "p" },
-      "Deliciouslu bold flavors made with passion"
+      "Deliciously bold flavors made with passion"
     ).createElement();
 
     const textWrapper = new HomePageUI("div", {
       class: "text-wrapper",
     }).createElement();
-
     textWrapper.append(h3, divisionLine, pElement);
 
     const img1 = new HomePageUI("img", {
@@ -64,15 +62,12 @@ export default class HomePageUI {
     const imageHolder = new HomePageUI("div", {
       class: "image-holder",
     }).createElement();
-
     imageHolder.append(img1, img2, img3, img4);
 
-    return [textWrapper, imageHolder];
-  }
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("home-page");
+    wrapper.appendChild(textWrapper, imageHolder);
 
-  displayHomeUI() {
-    divContent.innerHTML = "";
-    const elementTag = this.createHomeUI();
-    elementTag.forEach((el) => divContent.appendChild(el));
+    return wrapper;
   }
 }

@@ -1,6 +1,25 @@
 import "./styles.css";
 import HomePageUI from "./home.js";
+import MenuPageUI from "./menu.js";
+import AboutPageUI from "./about.js";
 
-const homePage = new HomePageUI();
+const divContent = document.querySelector("#content");
 
-homePage.displayHomeUI();
+function render(page) {
+  divContent.innerHTML = "";
+  divContent.appendChild(
+    page.createHomeUI?.() || page.createMenuUI?.() || page.createAboutUI?.()
+  );
+}
+
+document
+  .querySelector("#home-btn")
+  .addEventListener("click", () => render(new HomePageUI()));
+document
+  .querySelector("#menu-btn")
+  .addEventListener("click", () => render(new MenuPageUI()));
+document
+  .querySelector("#about-btn")
+  .addEventListener("click", () => render(new AboutPageUI()));
+
+render(new HomePageUI());
