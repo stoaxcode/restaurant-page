@@ -92,3 +92,5 @@ export default class MenuPageUI {
     return wrapper;
   }
 }
+
+// TODO: add automatic/manual slider for food menu and food descriptions
