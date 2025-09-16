@@ -78,7 +78,7 @@ ul > li > button {
 }
 
 .content-wrapper {
-  height: 91.3vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +102,7 @@ ul > li > button {
   opacity: 40%;
 }
 
-.text-wrapper {
+.text-wrapper-home {
   display: flex;
   flex-direction: column;
   width: 25%;
@@ -132,7 +132,7 @@ ul > li > button {
   width: 88%;
 }
 
-.image-holder {
+.image-holder-home {
   border: 1px groove #616161;
   width: 400px;
   height: 450px;
@@ -144,11 +144,6 @@ ul > li > button {
   display: flex;
   overflow: hidden;
   box-shadow: 10px 25px 30px rgba(151, 151, 151, 0.3);
-}
-
-.home-page {
-  height: 91.3vh;
-  display: flex;
 }
 
 .img {

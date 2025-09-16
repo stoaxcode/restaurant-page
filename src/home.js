@@ -38,7 +38,7 @@ export default class HomePageUI {
     ).createElement();
 
     const textWrapper = new HomePageUI("div", {
-      class: "text-wrapper",
+      class: "text-wrapper-home",
     }).createElement();
     textWrapper.append(h3, divisionLine, pElement);
 
@@ -60,13 +60,13 @@ export default class HomePageUI {
     }).createElement();
 
     const imageHolder = new HomePageUI("div", {
-      class: "image-holder",
+      class: "image-holder-home",
     }).createElement();
     imageHolder.append(img1, img2, img3, img4);
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("home-page");
-    wrapper.appendChild(textWrapper, imageHolder);
+    wrapper.append(textWrapper, imageHolder);
 
     return wrapper;
   }
