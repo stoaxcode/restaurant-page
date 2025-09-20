@@ -21,19 +21,37 @@ export default class MenuPageUI {
   }
 
   createHomeUI() {
-    const foodDate = [
+    const foodData = [
       {
         name: "Malai Paneer",
         desc: "Soft paneer cubes in a creamy sauce.",
         price: "$12.99",
         img: food1,
       },
+      {
+        name: "Kimchi",
+        desc: "Spicy fermented Korean cabbage.",
+        price: "$7.50",
+        img: food2,
+      },
+      {
+        name: "Salmon Teriyaki",
+        desc: "Grilled salmon glazed with teriyaki sauce.",
+        price: "$15.99",
+        img: food3,
+      },
+      {
+        name: "Chinese Shrimp",
+        desc: "Stir-fried shrimp with savory garlic sauce.",
+        price: "$18.25",
+        img: food4,
+      },
     ];
 
     const foodName = new MenuPageUI(
       "h3",
       { class: "h3" },
-      `hehe`
+      foodData[0].name
     ).createElement();
 
     const divisionLine = new MenuPageUI("div", {
@@ -43,13 +61,13 @@ export default class MenuPageUI {
     const foodDescription = new MenuPageUI(
       "p",
       { class: "p" },
-      `hehe`
+      foodData[0].desc
     ).createElement();
 
     const priceTag = new MenuPageUI(
       "p",
       { class: "price-tag" },
-      `none`
+      foodData[0].price
     ).createElement();
 
     const textWrapper = new MenuPageUI("div", {
@@ -57,57 +75,68 @@ export default class MenuPageUI {
     }).createElement();
     textWrapper.append(foodName, divisionLine, foodDescription, priceTag);
 
-    const img1 = new MenuPageUI("img", {
-      id: "food1",
-      class: "img-menu",
-      src: `${food1}`,
-    }).createElement();
-    const img2 = new MenuPageUI("img", {
-      id: "food2",
-      class: "img-menu",
-      src: `${food2}`,
-    }).createElement();
-    const img3 = new MenuPageUI("img", {
-      id: "food3",
-      class: "img-menu",
-      src: `${food3}`,
-    }).createElement();
-    const img4 = new MenuPageUI("img", {
-      id: "food4",
-      class: "img-menu",
-      src: `${food4}`,
-    }).createElement();
+    const imgElements = foodData.map((food, index) => {
+      new MenuPageUI("img", {
+        id: `food${index + 1}`,
+        class: "img-menu",
+        src: food.img,
+      }).createElement();
+    });
 
     const imageHolder = new MenuPageUI("div", {
       class: "image-holder-menu",
     }).createElement();
-    imageHolder.append(img1, img2, img3, img4);
+    imageHolder.append(...imgElements);
 
-    const link1 = new MenuPageUI("a", {
-      href: "#food1",
-      class: "menu-circle-btn",
-    }).createElement();
-    const link2 = new MenuPageUI("a", {
-      href: "#food2",
-      class: "menu-circle-btn",
-    }).createElement();
-    const link3 = new MenuPageUI("a", {
-      href: "#food3",
-      class: "menu-circle-btn",
-    }).createElement();
-    const link4 = new MenuPageUI("a", {
-      href: "#food4",
-      class: "menu-circle-btn",
-    }).createElement();
+    // const link1 = new MenuPageUI("a", {
+    //   href: "#food1",
+    //   class: "menu-circle-btn",
+    // }).createElement();
+    // const link2 = new MenuPageUI("a", {
+    //   href: "#food2",
+    //   class: "menu-circle-btn",
+    // }).createElement();
+    // const link3 = new MenuPageUI("a", {
+    //   href: "#food3",
+    //   class: "menu-circle-btn",
+    // }).createElement();
+    // const link4 = new MenuPageUI("a", {
+    //   href: "#food4",
+    //   class: "menu-circle-btn",
+    // }).createElement();
 
     const circleBtnHolder = new MenuPageUI("div", {
       class: "menu-btn-holder",
     }).createElement();
-    circleBtnHolder.append(link1, link2, link3, link4);
+    foodData.forEach((_, i) => {
+      const link = new MenuPageUI("a", {
+        href: `food${i + 1}`,
+        class: "menu-circle-btn",
+      }).createElement();
+      circleBtnHolder.append(link);
+    });
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("menu-page");
     wrapper.append(textWrapper, imageHolder, circleBtnHolder);
+
+    let currentIndex = 0;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % foodData.length;
+
+      foodName.textContent = foodData[currentIndex].name;
+      foodDescription.textContent = foodData[currentIndex].desc;
+      priceTag.textContent = foodData[currentIndex].price;
+
+      [...circleBtnHolder.children].forEach((dot, i) => {
+        dot.style.backgroundColor = i === currentIndex ? "#00bcd4" : "white";
+      });
+
+      imageHolder.style.transition = "transform 0.6s ease-in-out";
+      imageHolder.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }),
+      4000;
+
     return wrapper;
   }
 }
