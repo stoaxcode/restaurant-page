@@ -76,34 +76,21 @@ export default class MenuPageUI {
     textWrapper.append(foodName, divisionLine, foodDescription, priceTag);
 
     const imgElements = foodData.map((food, index) => {
-      new MenuPageUI("img", {
+      return new MenuPageUI("img", {
         id: `food${index + 1}`,
-        class: "img-menu",
+        class: "img-menu-item",
         src: food.img,
       }).createElement();
     });
 
+    const imgTrack = document.createElement("div");
+    imgTrack.classList.add("img-track");
+    imgTrack.append(...imgElements);
+
     const imageHolder = new MenuPageUI("div", {
       class: "image-holder-menu",
     }).createElement();
-    imageHolder.append(...imgElements);
-
-    // const link1 = new MenuPageUI("a", {
-    //   href: "#food1",
-    //   class: "menu-circle-btn",
-    // }).createElement();
-    // const link2 = new MenuPageUI("a", {
-    //   href: "#food2",
-    //   class: "menu-circle-btn",
-    // }).createElement();
-    // const link3 = new MenuPageUI("a", {
-    //   href: "#food3",
-    //   class: "menu-circle-btn",
-    // }).createElement();
-    // const link4 = new MenuPageUI("a", {
-    //   href: "#food4",
-    //   class: "menu-circle-btn",
-    // }).createElement();
+    imageHolder.append(imgTrack);
 
     const circleBtnHolder = new MenuPageUI("div", {
       class: "menu-btn-holder",
@@ -132,10 +119,9 @@ export default class MenuPageUI {
         dot.style.backgroundColor = i === currentIndex ? "#00bcd4" : "white";
       });
 
-      imageHolder.style.transition = "transform 0.6s ease-in-out";
-      imageHolder.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }),
-      4000;
+      imgTrack.style.transition = "transform 0.6s ease-in-out";
+      imgTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 4000);
 
     return wrapper;
   }

@@ -199,12 +199,6 @@ ul > li > button {
   box-shadow: 10px 25px 30px rgba(151, 151, 151, 0.3);
 }
 
-.image-holder-menu img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .menu-btn-holder {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -228,32 +222,21 @@ ul > li > button {
   box-shadow: 0px 0px 7px 4px rgba(7, 62, 69, 0.994);
   background-color: rgba(193, 190, 190, 0.949);
 }
-
-.img-menu {
+.img-track {
   display: flex;
   width: 400%;
   height: 100%;
-  animation: menuFoodSlider 20s ease-in-out infinite;
+}
+.img-menu-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes menuFoodSlider {
-  0%,
-  20% {
-    transform: translateX(0%);
-  }
-  25%,
-  45% {
-    transform: translateX(-100%);
-  }
-  50%,
-  70% {
-    transform: translateX(-200%);
-  }
-  75%,
-  95% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+.price-tag {
+  margin-top: 10px;
+  font-family: "SourceSerif4";
+  font-size: 2em;
+  color: yellow;
 }
