@@ -21,41 +21,60 @@ export default class MenuPageUI {
   }
 
   createHomeUI() {
-    const h3 = new MenuPageUI("h3", { class: "h3" }, `hehe`).createElement();
+    const foodDate = [
+      {
+        name: "Malai Paneer",
+        desc: "Soft paneer cubes in a creamy sauce.",
+        price: "$12.99",
+        img: food1,
+      },
+    ];
+
+    const foodName = new MenuPageUI(
+      "h3",
+      { class: "h3" },
+      `hehe`
+    ).createElement();
 
     const divisionLine = new MenuPageUI("div", {
       class: "division-line",
     }).createElement();
 
-    const pElement = new MenuPageUI(
+    const foodDescription = new MenuPageUI(
       "p",
       { class: "p" },
       `hehe`
     ).createElement();
 
+    const priceTag = new MenuPageUI(
+      "p",
+      { class: "price-tag" },
+      `none`
+    ).createElement();
+
     const textWrapper = new MenuPageUI("div", {
       class: "text-wrapper-menu",
     }).createElement();
-    textWrapper.append(h3, divisionLine, pElement);
+    textWrapper.append(foodName, divisionLine, foodDescription, priceTag);
 
     const img1 = new MenuPageUI("img", {
       id: "food1",
-      class: "img",
+      class: "img-menu",
       src: `${food1}`,
     }).createElement();
     const img2 = new MenuPageUI("img", {
       id: "food2",
-      class: "img",
+      class: "img-menu",
       src: `${food2}`,
     }).createElement();
     const img3 = new MenuPageUI("img", {
       id: "food3",
-      class: "img",
+      class: "img-menu",
       src: `${food3}`,
     }).createElement();
     const img4 = new MenuPageUI("img", {
       id: "food4",
-      class: "img",
+      class: "img-menu",
       src: `${food4}`,
     }).createElement();
 
@@ -67,19 +86,19 @@ export default class MenuPageUI {
     const link1 = new MenuPageUI("a", {
       href: "#food1",
       class: "menu-circle-btn",
-    });
+    }).createElement();
     const link2 = new MenuPageUI("a", {
       href: "#food2",
       class: "menu-circle-btn",
-    });
+    }).createElement();
     const link3 = new MenuPageUI("a", {
       href: "#food3",
       class: "menu-circle-btn",
-    });
+    }).createElement();
     const link4 = new MenuPageUI("a", {
       href: "#food4",
       class: "menu-circle-btn",
-    });
+    }).createElement();
 
     const circleBtnHolder = new MenuPageUI("div", {
       class: "menu-btn-holder",
@@ -88,7 +107,7 @@ export default class MenuPageUI {
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("menu-page");
-    wrapper.appendChild(textWrapper, imageHolder, circleBtnHolder);
+    wrapper.append(textWrapper, imageHolder, circleBtnHolder);
     return wrapper;
   }
 }
