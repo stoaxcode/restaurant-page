@@ -20,7 +20,7 @@ export default class MenuPageUI {
     return element;
   }
 
-  createHomeUI() {
+  createMenuUI() {
     const foodData = [
       {
         name: "Malai Paneer",
@@ -142,5 +142,3 @@ export default class MenuPageUI {
     return wrapper;
   }
 }
-
-// TODO: add automatic/manual slider for food menu and food descriptions

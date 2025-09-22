@@ -7,7 +7,7 @@ const divContent = document.querySelector("#content");
 
 function render(page) {
   divContent.innerHTML = "";
-  divContent.appendChild(
+  divContent.append(
     page.createHomeUI?.() || page.createMenuUI?.() || page.createAboutUI?.()
   );
 }
