@@ -95,11 +95,27 @@ export default class MenuPageUI {
     const circleBtnHolder = new MenuPageUI("div", {
       class: "menu-btn-holder",
     }).createElement();
+
     foodData.forEach((_, i) => {
       const link = new MenuPageUI("a", {
-        href: `food${i + 1}`,
+        href: `#food${i + 1}`,
         class: "menu-circle-btn",
       }).createElement();
+
+      link.addEventListener("click", () => {
+        currentIndex = i;
+
+        foodName.textContent = foodData[currentIndex].name;
+        foodDescription.textContent = foodData[currentIndex].desc;
+        priceTag.textContent = foodData[currentIndex].price;
+
+        [...circleBtnHolder.children].forEach((dot, j) => {
+          dot.style.backgroundColor = j === currentIndex ? "#00bcd4" : "white";
+        });
+
+        imgTrack.style.transition = "transform 0.9s ease-in-out";
+        imgTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
       circleBtnHolder.append(link);
     });
 
@@ -119,7 +135,7 @@ export default class MenuPageUI {
         dot.style.backgroundColor = i === currentIndex ? "#00bcd4" : "white";
       });
 
-      imgTrack.style.transition = "transform 0.6s ease-in-out";
+      imgTrack.style.transition = "transform 0.9s ease-in-out";
       imgTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
     }, 4000);
 
