@@ -114,5 +114,3 @@ export default class AboutPageUI {
     return wrapper;
   }
 }
-
-// TODO: Add scrolling animation for about info
