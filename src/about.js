@@ -25,17 +25,17 @@ export default class AboutPageUI {
       {
         section: "Our Story",
         paragraph:
-          "Cooking Restaurant was founded with a simple passion: to bring people together through food. Since our doors first opened, we’ve been dedicated to serving meals that feel both comforting and exciting — dishes that make you feel at home while surprising you with fresh flavors.",
+          "Hambal Restaurant was founded with a simple passion: to bring people together through food. Since our doors first opened, we’ve been dedicated to serving meals that feel both comforting and exciting — dishes that make you feel at home while surprising you with fresh flavors.",
       },
       {
         section: "Our Philosophy",
         paragraph:
-          "We believe food is more than just a meal — it’s an experience. Every dish at Cooking Restaurant is crafted with:",
+          "We believe food is more than just a meal — it’s an experience. Every dish at Hambal Restaurant is crafted with:",
       },
       {
         section: "Meet the Chefs",
         paragraph:
-          "At the heart of Cooking Restaurant is our chef and team, who pour their creativity and care into every plate. Inspired by family recipes and global flavors, our kitchen blends classic techniques with modern touches.",
+          "At the heart of Hambal Restaurant is our chef and team, who pour their creativity and care into every plate. Inspired by family recipes and global flavors, our kitchen blends classic techniques with modern touches.",
       },
       {
         section: "The Experience",
@@ -46,6 +46,10 @@ export default class AboutPageUI {
         section: "Join Us",
         paragraph:
           "We’d love to welcome you to Hambal Restaurant — where every dish tells a story.",
+      },
+      {
+        section: "📍 Find Us",
+        paragraph: "Hambal Restaurant 123 Food Street, Flavor Town",
       },
     ];
 
@@ -75,25 +79,40 @@ export default class AboutPageUI {
       class: "text-holder-about",
     }).createElement();
 
-    const reserveTableBtn = new AboutPageUI(
-      "button",
-      {
-        class: "reserve-table-btn",
-      },
-      "Reserve a Table!"
-    ).createElement();
+    const aboutTrack = document.createElement("div");
+    aboutTrack.classList.add("about-track");
 
-    const buttonHolderAbout = new AboutPageUI("div", {
-      class: "about-btn-holder",
-    }).createElement();
-    buttonHolderAbout.append(reserveTableBtn);
+    resData.forEach((item, i) => {
+      const sectionName = new AboutPageUI(
+        "h3",
+        {
+          class: "section-name",
+        },
+        item.section
+      ).createElement();
+
+      const paragraph = new AboutPageUI(
+        "p",
+        { class: "paragraph" },
+        item.paragraph
+      ).createElement();
+
+      const block = new AboutPageUI("div", {
+        class: "about-block",
+        "data-index": i,
+      }).createElement();
+      block.append(sectionName, paragraph);
+      aboutTrack.append(block);
+    });
+
+    textHolder.append(aboutTrack);
 
     const wrapper = document.createElement("div");
     wrapper.classList.add("about-page");
-    wrapper.append(imageHolder, textHolder, buttonHolderAbout);
+    wrapper.append(imageHolder, textHolder);
 
     return wrapper;
   }
 }
 
-// TODO: create AboutPage UI
+// TODO: Add scrolling animation for about info
