@@ -154,11 +154,15 @@ npm test
 
 ## Roadmap
 
-- [x] Task 1: <strike>Implement feature one.</strike>
-
-- [ ] Task 2: Implement feature two.
-
-- [ ] Task 3: Implement feature three.
+- [x] Setup project with Webpack and npm.
+- [x] Create homepage module (`home.js`) with intro content.
+- [x] Add menu module (`menu.js`) to display dishes.
+- [x] Add about module (`about.js`) with restaurant/chef info.
+- [x] Improve CSS styling and layout (responsive design).
+- [x] Add images and optimize for performance.
+- [x] Implement navigation to switch between pages dynamically.
+- [ ] Add testing setup (Jest or similar).
+- [x] Deploy project to GitHub Pages.
 
 ---
 
