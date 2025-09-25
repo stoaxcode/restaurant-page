@@ -629,7 +629,7 @@ body {
   }
 
   .content::before {
-    display: none; /* Hide background chef image on mobile */
+    display: none;
   }
 
   .text-wrapper-home {
@@ -701,7 +701,6 @@ body {
     text-align: center;
   }
 
-  /* About page mobile layout */
   .image-holder-chefs {
     position: relative;
     transform: none;
@@ -846,6 +845,7 @@ body {
 
   .about-block {
     padding: 1em;
+    height: 253px;
   }
 
   .text-holder-about {
@@ -858,7 +858,7 @@ body {
 @media screen and (max-width: 480px) {
   .header {
     padding: 0.8em;
-    gap: 1em;
+    gap: 6em;
   }
 
   .headerlogo-text {
@@ -882,10 +882,14 @@ body {
     padding: 10px;
   }
 
-  .text-wrapper-home,
-  .text-wrapper-menu {
+  .text-wrapper-home {
     padding: 12px;
-    margin: 15px auto;
+    width: 274px;
+    margin-top: 25px;
+  }
+
+  .text-wrapper-menu {
+    width: 230px;
   }
 
   .h3 {
@@ -908,18 +912,39 @@ body {
     font-size: 0.85em;
   }
 
-  .image-holder-home,
-  .image-holder-menu,
+  .image-holder-home {
+    height: 391px;
+    width: 285px;
+    margin-top: 50px;
+  }
+
+  .image-holder-menu {
+    height: 243px;
+    width: 312px;
+  }
+
+  .menu-circle-btn {
+    width: 10px;
+    height: 10px;
+  }
+
   .image-holder-chefs {
-    height: 220px;
+    height: 270px;
+    width: 179px;
+  }
+
+  .text-holder-about {
+    height: 280px;
+    margin-top: 53px;
   }
 
   .about-block {
     padding: 0.8em;
+    height: 253px;
   }
 }
 
-/* Touch device optimizations */
+/* touchy optimizations */
 @media (hover: none) {
   .logo-wrapper .logo:hover,
   .nav ul li button:hover,
@@ -942,7 +967,6 @@ body {
     width: 0;
   }
 
-  /* Add tap targets for better mobile interaction */
   .nav ul li button {
     min-height: 44px;
     min-width: 44px;
