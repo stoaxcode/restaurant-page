@@ -160,11 +160,11 @@ npm test
 
 ## Roadmap
 
-[x]Task 1: <strike>Implement feature one.</strike>
+- [x] Task 1: <strike>Implement feature one.</strike>
 
-[ ]Task 2: Implement feature two.
+- [ ] Task 2: Implement feature two.
 
-[ ]Task 3: Implement feature three.
+- [ ] Task 3: Implement feature three.
 
 ---
 
