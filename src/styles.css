@@ -580,10 +580,8 @@ body {
 @media screen and (max-width: 768px) {
   .header {
     padding: 1.5em;
-    gap: 5em;
+    gap: 17em;
     height: 90px;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .headerlogo-text {
@@ -634,8 +632,28 @@ body {
     display: none; /* Hide background chef image on mobile */
   }
 
-  /* Stack layout for mobile */
-  .text-wrapper-home,
+  .text-wrapper-home {
+    position: relative;
+    transform: none;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    min-height: 170px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .image-holder-home {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+  }
+
   .text-wrapper-menu {
     position: relative;
     transform: none;
@@ -648,14 +666,13 @@ body {
     padding: 20px;
   }
 
-  .image-holder-home,
   .image-holder-menu {
     position: relative;
     transform: none;
     top: auto;
     left: auto;
-    width: 90%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 443px;
     height: 300px;
     margin: 20px auto;
   }
@@ -690,8 +707,8 @@ body {
     transform: none;
     top: auto;
     left: auto;
-    width: 90%;
-    max-width: 280px;
+    width: 100%;
+    max-width: 230px;
     height: 350px;
     margin: 20px auto;
   }
@@ -701,9 +718,9 @@ body {
     transform: none;
     top: auto;
     left: auto;
-    width: 95%;
+    width: 65%;
     height: auto;
-    max-height: 500px;
+    max-height: 278px;
     margin: 20px auto;
   }
 
