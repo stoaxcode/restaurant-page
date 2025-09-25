@@ -52,12 +52,6 @@ IX. [Acknowledgments](#acknowledgments)<br>
 
 ---
 
-## Features
-
-<code>❯ REPLACE-ME</code>
-
----
-
 ## Project Structure
 
 ```sh
