@@ -745,10 +745,8 @@ body {
   .header {
     height: 80px;
     padding: 1em;
-    gap: 2em;
-    flex-direction: column;
-    height: auto;
-    min-height: 80px;
+    gap: 10em;
+    min-height: 89px;
   }
 
   .headerlogo-text {
@@ -758,7 +756,6 @@ body {
   .logo-wrapper {
     width: 150px;
     height: 60px;
-    margin-bottom: 10px;
   }
 
   .logo-wrapper .logo {
@@ -787,9 +784,13 @@ body {
     border-radius: 12px;
   }
 
-  .text-wrapper-home,
-  .text-wrapper-menu {
+  .text-wrapper-home {
     width: 95%;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .text-wrapper-menu {
+    width: 65%;
     padding: 15px;
     border-radius: 8px;
   }
@@ -803,22 +804,30 @@ body {
     line-height: 1.5;
   }
 
-  .image-holder-home,
-  .image-holder-menu {
-    width: 95%;
-    height: 250px;
+  .image-holder-home {
+    width: 89%;
+    height: 420px;
     border-radius: 60px 8px / 8px 80px;
+    margin-top: 30px;
+  }
+
+  .image-holder-menu {
+    width: 90%;
+    height: 248px;
+    border-radius: 60px 8px / 8px 80px;
+    margin-top: 64px;
   }
 
   .image-holder-chefs {
     width: 95%;
     height: 300px;
     border-radius: 60px 8px / 8px 80px;
+    margin-top: 30px;
   }
 
   .menu-circle-btn {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin: 0.2rem;
   }
 
@@ -840,7 +849,8 @@ body {
   }
 
   .text-holder-about {
-    max-height: 400px;
+    max-height: 256px;
+    margin-top: 63px;
   }
 }
 
